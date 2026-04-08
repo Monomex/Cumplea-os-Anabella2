@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feliz Cumpleaños Anabela 🎉</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Fondo con efecto de vidrio esmerilado */
+    .glass-container {
+      position: absolute;
+      width: 90%;
+      max-width: 800px;
+      padding: 60px 40px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 30px;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+      text-align: center;
+      z-index: 10;
+      animation: slideUp 1s ease-out;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5em, 8vw, 4em);
+      color: #ffffff;
+      margin-bottom: 20px;
+      text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      animation: fadeInScale 1.2s ease-out;
+      letter-spacing: 2px;
+    }
+
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .heart-container {
+      font-size: 3em;
+      margin: 20px 0;
+      animation: heartBeat 1.2s ease-in-out infinite;
+    }
+
+    @keyframes heartBeat {
+      0%, 100% { transform: scale(1); }
+      25% { transform: scale(1.1); }
+      50% { transform: scale(1.2); }
+      75% { transform: scale(1.1); }
+    }
+
+    .subtitle {
+      font-size: clamp(1.2em, 4vw, 1.8em);
+      color: rgba(255, 255, 255, 0.95);
+      margin-top: 20px;
+      font-weight: 300;
+      letter-spacing: 1px;
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .button-container {
+      margin-top: 40px;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 15px 35px;
+      font-size: 1.1em;
+      font-weight: 600;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #f093fb, #f5576c);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(245, 87, 108, 0.4);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: 2px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-3px);
+    }
+
+    /* Confeti */
+    .confetti {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      pointer-events: none;
+      z-index: 5;
+    }
+
+    /* Lluvia de regalos */
+    .gift {
+      position: fixed;
+      font-size: 2.5em;
+      pointer-events: none;
+      z-index: 3;
+      filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    }
+
+    /* Estrellas de fondo */
+    .star {
+      position: fixed;
+      font-size: 1.5em;
+      opacity: 0.6;
+      pointer-events: none;
+      z-index: 1;
+      animation: twinkle 3s ease-in-out infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .glass-container {
+        width: 95%;
+        padding: 40px 20px;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+
+      .heart-container {
+        font-size: 2em;
+      }
+
+      .button-container {
+        gap: 10px;
+      }
+
+      .btn {
+        padding: 12px 25px;
+        font-size: 0.95em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Estrellas de fondo -->
+  <div id="stars-container"></div>
+
+  <!-- Contenedor principal -->
+  <div class="glass-container">
+    <div class="heart-container">💖</div>
+    <h1>Feliz Cumpleaños</h1>
+    <h1 style="background: linear-gradient(135deg, #f093fb, #f5576c, #ffa500); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Anabela</h1>
+    <p class="subtitle">Que este día esté lleno de magia, alegría y momentos especiales</p>
+    
+    <div class="button-container">
+      <button class="btn btn-primary" onclick="triggerConfetti()">🎉 ¡Celebrar!</button>
+      <button class="btn btn-secondary" onclick="toggleGifts()">🎁 Lluvia de Regalos</button>
+    </div>
+  </div>
+
+  <script>
+    // Crear estrellas de fondo
+    function createStars() {
+      const starsContainer = document.getElementById('stars-container');
+      const starCount = Math.min(50, Math.floor(window.innerWidth / 30));
+      
+      for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        star.classList.add('star');
+        star.textContent = '✨';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.animationDelay = Math.random() * 3 + 's';
+        starsContainer.appendChild(star);
+      }
+    }
+
+    // Crear confeti
+    function createConfetti() {
+      const colors = ['#f093fb', '#f5576c', '#ffa500', '#4facfe', '#00f2fe', '#ffd700'];
+      const confetti = document.createElement('div');
+      confetti.classList.add('confetti');
+      confetti.style.left = Math.random() * window.innerWidth + 'px';
+      confetti.style.top = '-10px';
+      confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+      
+      const duration = Math.random() * 2 + 2;
+      const xMove = (Math.random() - 0.5) * 300;
+      
+      confetti.animate([
+        { transform: 'translateY(0) translateX(0) rotate(0deg)', opacity: 1 },
+        { transform: `translateY(${window.innerHeight + 10}px) translateX(${xMove}px) rotate(360deg)`, opacity: 0 }
+      ], {
+        duration: duration * 1000,
+        easing: 'cubic-bezier(0.25, 0.46, 0.45, 0.94)'
+      });
+      
+      document.body.appendChild(confetti);
+      setTimeout(() => confetti.remove(), duration * 1000);
+    }
+
+    // Trigger confetti
+    function triggerConfetti() {
+      for (let i = 0; i < 50; i++) {
+        setTimeout(createConfetti, i * 30);
+      }
+    }
+
+    // Lluvia de regalos
+    let giftsActive = false;
+    let giftInterval;
+
+    function toggleGifts() {
+      giftsActive = !giftsActive;
+      if (giftsActive) {
+        giftInterval = setInterval(createGift, 150);
+      } else {
+        clearInterval(giftInterval);
+      }
+    }
+
+    function createGift() {
+      const gifts = ['🎁', '🎀', '🎊', '🎈', '🌹', '💝'];
+      const gift = document.createElement('div');
+      gift.classList.add('gift');
+      gift.textContent = gifts[Math.floor(Math.random() * gifts.length)];
+      gift.style.left = Math.random() * window.innerWidth + 'px';
+      gift.style.top = '-50px';
+      
+      const duration = Math.random() * 3 + 3;
+      const xMove = (Math.random() - 0.5) * 200;
+      
+      gift.animate([
+        { transform: 'translateY(0) translateX(0) rotate(0deg)', opacity: 1 },
+        { transform: `translateY(${window.innerHeight + 50}px) translateX(${xMove}px) rotate(360deg)`, opacity: 0 }
+      ], {
+        duration: duration * 1000,
+        easing: 'ease-in'
+      });
+      
+      document.body.appendChild(gift);
+      setTimeout(() => gift.remove(), duration * 1000);
+    }
+
+    // Inicializar
+    createStars();
+
+    // Crear confeti automático al cargar
+    setTimeout(() => {
+      for (let i = 0; i < 30; i++) {
+        setTimeout(createConfetti, i * 50);
+      }
+    }, 500);
+  </script>
+</body>
+</html>
